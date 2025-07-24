@@ -1,0 +1,131 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[left=0.5in,right=0.5in,top=0.5in,bottom=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage[skip=0pt]{parskip}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Change link colours for printing
+\newif\ifprintversion
+\printversionfalse
+% \printversiontrue
+
+% Meta
+\setmainfont{Times New Roman}
+\pagestyle{empty}
+\setstretch{0}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{left=6pt,labelsep=6pt,itemsep=0pt,parsep=0pt,topsep=0pt}
+\ifprintversion
+  \hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0}
+  }
+\else
+\definecolor{linkblue}{RGB}{0, 64, 128}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=linkblue
+}
+\fi
+
+% Commands and envs
+\newcommand{\horibar}[2]{#1\hspace{5pt}|\hspace{5pt}#2}
+
+\newcommand{\sep}[1]{\par\vspace{#1}}
+
+\renewenvironment{section}[1]{
+\sep{11pt}
+{
+\fontsize{14}{2}
+\selectfont
+\textbf{#1}\\[0.5pt]
+}
+\sep{6pt}
+\noindent\rule{\linewidth}{0.5pt}
+\sep{4pt}
+}
+{
+}
+
+\renewenvironment{subsection}[3]
+{
+\sep{4pt}
+\horibar{\textbf{#1}}{#2} \hfill #3
+\par\setstretch{1}
+\begin{itemize}
+}
+{
+\end{itemize}
+\setstretch{0}
+}
+
+% Document
+\begin{document}
+
+% Header
+{\fontsize{20}{1} \selectfont \textbf{Carter Opperman}} \hfill \horibar{\href{mailto:asq2am@virginia.edu}{asq2am@virginia.edu}}{\horibar{\href{tel:+14342578723}{(434) 257-8723}}{\href{https://carteropperman.com}{carteropperman.com}}}
+\sep{5pt}
+
+\begin{section}{Education}
+    \sep{4pt}
+    \horibar{\textbf{University of Virginia, College of Arts and Sciences}}{Charlottesville, VA} \hfill Aug 2022–May 2026
+    \sep{4pt}
+    \par\hspace{6pt}B.A., Computer Science, Economics  –  GPA: 3.86  –  Computer Science GPA: 4.00
+    \sep{2pt}
+\end{section}
+
+\begin{section}{Internship Experience}
+    \begin{subsection}{Associate Software Engineer}{\horibar{WiseTech Global}{Sydney, Australia}}{May 2024–Aug 2024}
+        \item Engineered solutions for 18 work items in the Business Intelligence team, including 3 critical defect patches
+        \item Led technical design and implementation of improvements to internal processes in SQL Server change data capture, facilitating a 30x efficiency gain in enterprise data warehouse procedures
+        \item Constructed denormalized tables to facilitate queries of aggregated data tailored to customer needs, including SQL scripts for operational data extraction, transformation and loading into an enterprise data warehouse
+    \end{subsection}
+\end{section}
+
+\begin{section}{Work Experience}
+    \begin{subsection}{Research Assistant}{\horibar{University of Virginia, LESS Lab}{Charlottesville, VA}}{Aug 2024–Present}
+        \item Develop techniques and tools for building and verifying complex, safety-critical software systems 
+        \item Lead research and development of satisfiability solvers implementing multi-armed bandit algorithms to increase efficiency in a critical decision-making heuristic, focusing on C++ optimization to ensure accurate benchmarks
+    \end{subsection}
+    \begin{subsection}{Teaching Assistant}{\horibar{University of Virginia, Computer Science}{Charlottesville, VA}}{Aug 2024–Present}
+        \item Enhance students’ learning in Computer Systems and Organization II, and Discrete Mathematics, through 3 weekly hours of class, office hours and lab, guiding to individual understanding
+        \item Craft and review exam questions synthesizing multiple topics to test limits of students’ knowledge
+    \end{subsection}
+    \begin{subsection}{Head Teaching Assistant}{\horibar{University of Virginia, Computer Science}{Charlottesville, VA}}{Mar 2024–Present}
+        \item Coordinate between professor, 30+ TA's, and 600+ students to lead delivery of Intro to Programming content
+        \item Direct at least 1 lab per week, reinforcing learning with live Python coding demonstrations for 70+ students
+        \item Prepare and present interactive lectures for 100+ students teaching essential concepts, UX/UI and game design
+    \end{subsection}
+\end{section}
+
+\begin{section}{Technical Projects and Skills}
+    \begin{subsection}{Multicore Operating System}{Technologies: C, ARM64 Assembly, QEMU, Raspberry Pi}{Jan 2025–May 2025}
+        \item Build from bare-metal to a rich, multicore OS supporting concurrent applications and a filesystem
+        \item Execute on hardware with support for I/O devices including keyboard input, video display, and sound output
+    \end{subsection}
+    \begin{subsection}{sipc Compiler}{Technologies: C++17, LLVM, ANTLR4, Catch2}{Aug 2024–Dec 2024}
+        \item Implemented extensions to the tipc compiler including iterator and range-style loops, booleans, and arrays
+        \item Researched and applied multiple LLVM optimization passes, resulting in up to 9x faster benchmark performance 
+        \item Created 200+ unit and system tests, achieving 100\% coverage of 1500+ new lines of C++ and LLVM code
+    \end{subsection}
+    {
+    \sep{2pt}\setstretch{1}
+    \textbf{Programming Skills:} C\#/.NET, C++, C, SQL/Microsoft SQL Server, Java, Python, x86 and ARM64 Assembly, LLVM, JavaScript, HTML/CSS, Bash/Unix, Git and GitHub, R, VBA, Lua, Julia
+    \par\setstretch{0}
+    \sep{2pt}
+    }
+\end{section}
+
+\begin{section}{Leadership and Service}
+    \begin{subsection}{Chief Operations and Outreach Officer}{\horibar{Community Honor Fund}{Charlottesville, VA}}{Mar 2023–Jan 2025}
+        \item Empowered Charlottesville citizens with low-interest loans (totaling up to \$1,000) and financial counseling
+        \item Led team of 8 in client acquisition and onboarding, community outreach, and local partnership development
+        \item Developed and maintained WordPress website with custom CSS styling to promote organization’s mission
+    \end{subsection}
+\end{section}
+
+\end{document}
