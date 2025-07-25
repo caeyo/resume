@@ -1,0 +1,17 @@
+name: Trigger Website Resume Rebuild
+
+on:
+  push:
+    branches: [main]  # Trigger on any push to main (adjust if you use another branch)
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call repository_dispatch on personal site
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.PERSONAL_SITE_PAT }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/caeyo/carteropperman.com/dispatches \
+            -d '{"event_type":"resume-updated"}'
