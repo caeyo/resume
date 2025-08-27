@@ -7,6 +7,8 @@
 \usepackage{setspace}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
 
 % Change link colours for printing
 \newif\ifprintversion
@@ -15,6 +17,7 @@
 
 % Meta
 \setmainfont{TeX Gyre Termes}
+\raggedright
 \pagestyle{empty}
 \setstretch{0}
 \setlength{\parindent}{0pt}
@@ -44,7 +47,7 @@
 \selectfont
 \textbf{#1}\\[0.5pt]
 }
-\sep{6pt}
+\sep{4pt}
 \noindent\rule{\linewidth}{0.5pt}
 \sep{4pt}
 }
@@ -89,10 +92,11 @@
 \begin{section}{Work Experience}
     \begin{subsection}{Research Assistant}{\horibar{University of Virginia, LESS Lab}{Charlottesville, VA}}{Aug 2024–Present}
         \item Develop techniques and tools for building and verifying complex, safety-critical software systems 
-        \item Lead research and development of satisfiability solvers implementing multi-armed bandit algorithms to increase efficiency in a critical decision-making heuristic, focusing on C++ optimization to ensure accurate benchmarks
+        \item Lead research and development of SAT solvers utilizing multi-armed bandit algorithms to increase efficiency in a critical decision-making heuristic, with a particular focus on C and C++ optimization
+        \item Collaborate to engineer graph neural networks/LLMs leveraging SAT formula probabilistic backdoor data to predict significant variables in these formulas and accelerate solving
     \end{subsection}
     \begin{subsection}{Head Teaching Assistant}{\horibar{University of Virginia, Computer Science}{Charlottesville, VA}}{Mar 2024–Present}
-        \item Coordinate between professor, 30+ TA's, and 600+ students to lead delivery of Intro to Programming content
+        \item Coordinate between 2 professors, 30+ TA's, and 600+ students to lead delivery of Intro to Programming content
         \item Direct at least 1 lab per week, reinforcing learning with live Python coding demonstrations for 70+ students
         \item Prepare and present interactive lectures for 100+ students teaching essential concepts, UX/UI and game design
     \end{subsection}
@@ -114,7 +118,7 @@
     \end{subsection}
     {
     \sep{2pt}\setstretch{1}
-    \textbf{Programming Skills:} C\#/.NET, C++, C, SQL/Microsoft SQL Server, Java, Python, x86 and ARM64 Assembly, LLVM, JavaScript, HTML/CSS, Bash/Unix, Git and GitHub, R, VBA, Lua, Julia
+    \textbf{Programming Skills:} C\#/.NET, C++, C, SQL/Microsoft SQL Server, Java, Python, x86 \& ARM64 Assembly, Bash/Unix, LLVM, JavaScript, HTML/CSS, Git and GitHub, R, VBA, Lua, Julia
     \par\setstretch{0}
     \sep{2pt}
     }
